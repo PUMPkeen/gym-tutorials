@@ -74,6 +74,12 @@ test('settings: add, rename and reorder groups', async ({ page }) => {
   await page.getByRole('button', { name: 'Add group' }).click();
   await expect(page.getByRole('textbox', { name: 'Rename Forearms' })).toBeVisible();
   await page.getByRole('button', { name: 'Move Forearms up' }).click();
-  const names = await page.locator('.group-list input').evaluateAll((els) => els.map((e) => (e as HTMLInputElement).value));
-  expect(names.slice(-2)).toEqual(['Forearms', 'Cardio / Full body']);
+  // The swap is saved to IndexedDB and the list redraws afterwards: retry until it does.
+  await expect
+    .poll(() =>
+      page
+        .locator('.group-list input')
+        .evaluateAll((els) => els.slice(-2).map((e) => (e as HTMLInputElement).value)),
+    )
+    .toEqual(['Forearms', 'Cardio / Full body']);
 });
