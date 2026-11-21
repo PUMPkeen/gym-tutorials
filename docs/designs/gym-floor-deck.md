@@ -485,7 +485,7 @@ finding above. Run with Claude Code or Codex; checkbox as you ship.
   - Surfaced by: Code quality note
   - Files: `src/lib/importVideo.ts`, `src/lib/backup.ts`
   - Verify: unit tests for both callers
-- [ ] **T6 (P3, human: ~15min / CC: ~2min)** — hosting — Host on Cloudflare Pages, or set Vite `base` + service-worker scope for GitHub Pages
+- [x] **T6 (P3, human: ~15min / CC: ~2min)** — hosting — Host on Cloudflare Pages, or set Vite `base` + service-worker scope for GitHub Pages
   - Surfaced by: Step 0 distribution note
   - Files: `vite.config.ts`
   - Verify: install on the phone from the deployed URL and cold-start offline

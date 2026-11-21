@@ -5,6 +5,9 @@ group clips by muscle and swipe through only today's exercises in the gym, each
 clip looping with a rest timer on top. Videos stay on the phone, and the app
 works without signal.
 
+**Live app:** https://pumpkeen.github.io/gym-tutorials/. On Android, open it in Chrome, then use **⋮ → Install app**.
+Every push to `main` runs the unit and E2E tests, then deploys to GitHub Pages.
+
 Design and decisions: [docs/designs/gym-floor-deck.md](docs/designs/gym-floor-deck.md).
 
 ## Develop
